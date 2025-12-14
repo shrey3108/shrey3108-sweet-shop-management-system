@@ -6,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.database import engine, Base
 from app.routers import auth_router, sweets_router
+from app.routers.inventory import router as inventory_router
 
 
 # Create database tables
@@ -30,6 +31,7 @@ app.add_middleware(
 # Include routers
 app.include_router(auth_router)
 app.include_router(sweets_router)
+app.include_router(inventory_router)
 
 
 @app.get("/")
