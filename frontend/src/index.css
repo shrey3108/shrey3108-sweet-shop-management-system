@@ -165,6 +165,393 @@ body {
 .dashboard-header h1 {
   color: #2c3e50;
   font-size: 24px;
+  margin: 0;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.user-info {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin: 0;
+}
+
+.user-role {
+  color: #3498db;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.dashboard-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.search-form {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+  max-width: 600px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.btn-search,
+.btn-clear {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-search {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-search:hover {
+  background-color: #2980b9;
+}
+
+.btn-clear {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.btn-clear:hover {
+  background-color: #7f8c8d;
+}
+
+.btn-add {
+  padding: 10px 20px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-add:hover {
+  background-color: #229954;
+}
+
+.dashboard-content {
+  padding: 20px;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #7f8c8d;
+  font-size: 16px;
+}
+
+.no-sweets {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.no-sweets p {
+  color: #7f8c8d;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+/* Sweets Grid */
+.sweets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Sweet Card */
+.sweet-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+}
+
+.sweet-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.sweet-card-header {
+  padding: 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.sweet-card-header h3 {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+}
+
+.sweet-category {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.sweet-card-body {
+  padding: 15px;
+}
+
+.sweet-info {
+  margin-bottom: 15px;
+}
+
+.sweet-price {
+  font-size: 24px;
+  font-weight: 700;
+  color: #27ae60;
+  margin: 0 0 5px 0;
+}
+
+.sweet-stock {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin: 0;
+}
+
+.sweet-stock.out-of-stock {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+/* Purchase Section */
+.purchase-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-control button {
+  width: 35px;
+  height: 35px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  color: #3498db;
+  transition: all 0.2s;
+}
+
+.quantity-control button:hover:not(:disabled) {
+  background: #3498db;
+  color: white;
+}
+
+.quantity-control button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.quantity-control input {
+  width: 60px;
+  text-align: center;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.btn-purchase {
+  padding: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-purchase:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.btn-purchase:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Admin Actions */
+.admin-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-edit,
+.btn-delete {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-edit {
+  background-color: #f39c12;
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: #e67e22;
+}
+
+.btn-delete {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #c0392b;
+}
+
+/* Sweet Form Modal */
+.sweet-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.sweet-form-container {
+  background: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.sweet-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.sweet-form-header h2 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 20px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #7f8c8d;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  color: #2c3e50;
+}
+
+.sweet-form-container form {
+  padding: 20px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.btn-cancel,
+.btn-submit {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-cancel {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.btn-cancel:hover {
+  background-color: #7f8c8d;
+}
+
+.btn-submit {
+  background-color: #27ae60;
+  color: white;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background-color: #229954;
+}
+
+.btn-submit:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
 }
 
 .dashboard-content {
