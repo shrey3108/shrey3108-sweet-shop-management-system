@@ -1,4 +1,4 @@
-# Sweet Shop Management System – Backend (FastAPI)
+# Sweet Shop Management System 
 
 A production-ready RESTful API backend for managing a sweet shop's inventory, user authentication, and role-based access control. Built using FastAPI with comprehensive test coverage following Test-Driven Development (TDD) principles.
 
